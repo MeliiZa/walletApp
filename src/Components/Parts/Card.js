@@ -99,7 +99,7 @@ function Card({navigation}) {
                         style={{
                         marginTop: 30,
                         color: "#fff",
-                        fontSize: 10,
+                        fontSize: 12,
                         fontWeight: "700",
                         }}
                     >

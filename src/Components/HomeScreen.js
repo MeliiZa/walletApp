@@ -6,9 +6,10 @@ import Card from './Parts/Card';
 import Empty from './Parts/Empty';
 
 import {useSelector, useDispatch} from 'react-redux';
-
+import {deleteTransaction} from '../store/actions/transactionActions'
 
 function Item({ title, price, id }) {
+    const dispatch = useDispatch();
   return (
     <View
       style={{
@@ -18,7 +19,8 @@ function Item({ title, price, id }) {
       }}
     >
       <ListItem>
-        <CheckBox />
+        <CheckBox color="#0066cc" onPress={()=>{
+            dispatch(deleteTransaction(id))}}/>
 
         <Body>
           <Text style={{ fontSize: 17, fontWeight: "700", marginLeft: 10 }}>
