@@ -12,6 +12,9 @@ function Card({navigation}) {
     const prices = transactions.map(transaction => transaction.price);
     const totalPrice = prices.reduce((prev,cur)=> (prev += cur),0).toFixed(2);
 
+    const expense = prices.filter(price => price < 0)
+    .reduce((prev,cur)=> (prev += cur),0) * -1;
+
     return (
         <LinearGradient
                 colors={["#d50075", "#090979", "#00d4ff"]}
@@ -106,11 +109,11 @@ function Card({navigation}) {
                     <Text
                         style={{
                         color: "#fff",
-                        fontSize: 10,
+                        fontSize: 18,
                         fontWeight: "700",
                         }}
                     >
-                        $200000
+                        ${expense}
                     </Text>
                     </View>
                 </View>
